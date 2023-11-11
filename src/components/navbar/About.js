@@ -2,84 +2,142 @@ import React from "react";
 import image1 from "../public/images/image1.jpg";
 import image2 from "../public/images/image2.jpg";
 import image3 from "../public/images/image3.jpg";
-import "../styles/navbar.css";
+import image4 from "../public/images/image4.jpg";
+import "../styles/about.css";
 
 const About = () => {
-  
   return (
     <>
-      <div className="text-center mt-5">
-        <h2 className="display-4 fw-bold">About Us</h2>
-      </div>
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src={image1} alt="First slide" />
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={image2} alt="Second slide" />
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={image3} alt="Third slide" />
+      <main>
+        <div className="container-fluid px-0">
+          <div className="row text-right">
+            <div className="col-md-6 col-lg-6 d-flex align-items-center">
+              <img
+                src={image1}
+                className="img-fluid rounded mx-auto d-block "
+                alt="image desc"
+              />
+            </div>
+            <div className="col-md-6 col-lg-6 mt-5 pt-5">
+              <h2 className="">
+                Photos for <span className="our">For Everyone</span>
+              </h2>
+              <p className="">
+                <strong className="">Pico</strong> is a India-based website
+                dedicated for sharing stock photography under the Pico license.
+                Pico allows photographers to upload photos to its website, which
+                are then curated by a team of photo editors. In Pico, we are
+                aspiring to be one of the largest photography suppliers on the
+                internet.
+              </p>
+            </div>
           </div>
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </a>
+      </main>
+      <div class="text-center">
+        <h2>
+          <span className="team">OUR TEAM</span>
+        </h2>
       </div>
-
-      {/* Additional Headings and Dummy Text */}
-      <div className="container mt-5">
-        <h3 className="mb-4 text-center">What We Do</h3>
-        <p className="text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-
-        <h3 className="mb-4 text-center">Our Mission</h3>
-        <p className="text-center">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
-        </p>
-
-        <h3 className="mb-4 text-center">Our Team</h3>
-        <p className="text-center">
-          Suspendisse potenti. Nullam vel ultricies quam, ac facilisis odio.
-          Quisque interdum, mi vitae tincidunt lobortis, dui velit lobortis
-          justo, non aliquet elit tortor at ante. Integer ac elit eu nibh
-          egestas volutpat.
-        </p>
-
-        <h3 className="mb-4 text-center">Our Clients</h3>
-        <p className="text-center">
-          Phasellus mattis sodales libero et malesuada. Aliquam erat volutpat.
-          Sed fermentum vitae ligula in varius. Nulla at semper risus, non
-          vulputate arcu.
-        </p>
-      </div>
+      <section>
+        <div class="container-fluid px-0 bg-dark mt-4">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
+              <div className="card">
+                <img
+                  className="card-img-top"
+                  src={image1}
+                  alt="Card image cap"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <div
+                    className=""
+                    role="group"
+                    aria-label="Basic mixed styles example"
+                  >
+                    <a href="#" className="btn btn-primary text-white mt-2">
+                      <i className="fa fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="#" className="btn btn-primary mx-2 mt-2">
+                      <i className="fa fa-facebook"></i>facebook
+                    </a>
+                    <a href="#" className="btn btn-primary ml-2 mt-2">
+                      <i className="fa fa-github"></i>github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
+              <div className="card">
+                <img
+                  className="card-img-top"
+                  src={image1}
+                  alt="Card image cap"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <div
+                    className=""
+                    role="group"
+                    aria-label="Basic mixed styles example"
+                  >
+                    <a href="#" className="btn btn-primary text-white mt-2">
+                      <i className="fa fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="#" className="btn btn-primary mx-2 mt-2">
+                      <i className="fa fa-facebook"></i>facebook
+                    </a>
+                    <a href="#" className="btn btn-primary ml-2 mt-2">
+                      <i className="fa fa-github"></i>github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
+              <div className="card">
+                <img
+                  className="card-img-top"
+                  src={image1}
+                  alt="Card image cap"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <div
+                    className=""
+                    role="group"
+                    aria-label="Basic mixed styles example"
+                  >
+                    <a href="#" className="btn btn-primary text-white mt-2">
+                      <i className="fa fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="#" className="btn btn-primary mx-2 mt-2">
+                      <i className="fa fa-facebook"></i>facebook
+                    </a>
+                    <a href="#" className="btn btn-primary ml-2 mt-2">
+                      <i className="fa fa-github"></i>github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
