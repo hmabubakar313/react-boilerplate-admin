@@ -1,0 +1,32 @@
+.hero {
+
+  position: relative;
+  height: auto;
+  padding-bottom: 80px;
+  background: #4f2f60 url("https://miguelquispe.com/pen//hero.jpg") center top
+    no-repeat;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero h1 {
+  margin: 50px 0 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+}
+.hero h1 span {
+  font: 700 60px/1 "Dancing Script", cursive;
+  display: block;
+}
+.hero h2 {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 20px;
+}
+.card
+{
+    cursor: pointer;
+}

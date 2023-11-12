@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import LoginForm from '../forms/Login';
+import React  from 'react';
+
 
 const Navbar = () => {
-  const [showLoginForm, setShowLoginForm] = useState(false);
-
-  const toggleLoginForm = () => {
-    setShowLoginForm(!showLoginForm);
-  };
+  
 
   return (
     <>
@@ -38,7 +34,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={toggleLoginForm}>
+              <a className="nav-link" href="#" >
                 <i className="bi bi-person"></i> Login
               </a>
             </li>
@@ -50,7 +46,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      {showLoginForm && <LoginForm />}
+     
     </>
   );
 };
