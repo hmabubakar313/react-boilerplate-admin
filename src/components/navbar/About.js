@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <main>
-        <div className="container-fluid px-0">
+        <div className="container-fluid  ">
           <div className="row text-right">
             <div className="col-md-6 col-lg-6 d-flex align-items-center">
               <img
@@ -60,45 +60,14 @@ const About = () => {
                     role="group"
                     aria-label="Basic mixed styles example"
                   >
-                    <a href="#" className="btn btn-primary text-white mt-2">
-                      <i className="fa fa-linkedin"></i> LinkedIn
+                    <a href="#" className="btn btn-info  mt-2">
+                      <i className="fa fa-linkedin"></i> 
                     </a>
-                    <a href="#" className="btn btn-primary mx-2 mt-2">
-                      <i className="fa fa-facebook"></i>facebook
+                    <a href="#" className="btn btn-info mx-2 mt-2">
+                      <i className="fa fa-facebook"></i>
                     </a>
-                    <a href="#" className="btn btn-primary ml-2 mt-2">
-                      <i className="fa fa-github"></i>github
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
-              <div className="card">
-                <img
-                  className="card-img-top"
-                  src={image1}
-                  alt="Card image cap"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div
-                    className=""
-                    role="group"
-                    aria-label="Basic mixed styles example"
-                  >
-                    <a href="#" className="btn btn-primary text-white mt-2">
-                      <i className="fa fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="#" className="btn btn-primary mx-2 mt-2">
-                      <i className="fa fa-facebook"></i>facebook
-                    </a>
-                    <a href="#" className="btn btn-primary ml-2 mt-2">
-                      <i className="fa fa-github"></i>github
+                    <a href="#" className="btn btn-info  ml-2 mt-2">
+                      <i className="fa fa-github"></i>
                     </a>
                   </div>
                 </div>
@@ -122,14 +91,45 @@ const About = () => {
                     role="group"
                     aria-label="Basic mixed styles example"
                   >
-                    <a href="#" className="btn btn-primary text-white mt-2">
-                      <i className="fa fa-linkedin"></i> LinkedIn
+                    <a href="#" className="btn btn-info  mt-2">
+                      <i className="fa fa-linkedin"></i> 
                     </a>
-                    <a href="#" className="btn btn-primary mx-2 mt-2">
-                      <i className="fa fa-facebook"></i>facebook
+                    <a href="#" className="btn btn-info mx-2 mt-2">
+                      <i className="fa fa-facebook"></i>
                     </a>
-                    <a href="#" className="btn btn-primary ml-2 mt-2">
-                      <i className="fa fa-github"></i>github
+                    <a href="#" className="btn btn-info ml-2 mt-2">
+                      <i className="fa fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
+              <div className="card">
+                <img
+                  className="card-img-top"
+                  src={image1}
+                  alt="Card image cap"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <div
+                    className=""
+                    role="group"
+                    aria-label="Basic mixed styles example"
+                  >
+                    <a href="#" className="btn btn-info  mt-2">
+                      <i className="fa fa-linkedin "></i> 
+                    </a>
+                    <a href="#" className="btn btn-info mx-2 mt-2">
+                      <i className="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" className="btn btn-info ml-2 mt-2">
+                      <i className="fa fa-github"></i>
                     </a>
                   </div>
                 </div>
