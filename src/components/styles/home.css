@@ -1,13 +1,13 @@
 .hero {
-
   position: relative;
-  height: auto;
+  height: 100%;
   padding-bottom: 80px;
   background: #4f2f60 url("https://miguelquispe.com/pen//hero.jpg") center top
     no-repeat;
   background-size: cover;
   color: #fff;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero h1 {
@@ -26,7 +26,14 @@
   font-weight: 400;
   padding: 20px;
 }
-.card
-{
-    cursor: pointer;
+.card {
+  cursor: pointer;
+  background-color: #f8f9fa; 
+  transition: background-color 0.3s ease;
 }
+
+.card:hover {
+  background-color: #e2e6ea; 
+}
+
+
