@@ -10,12 +10,13 @@ import Home from './components/navbar/Home';
 
 
 
+
 const App = () => {
   return (
     <Router>
       <div>
         <Navbar />
-        <div className="container mt-4">
+        <div className="container-fluid  m-0 p-0">
           <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/contact_us" element={<Contact />} />

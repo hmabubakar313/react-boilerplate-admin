@@ -1,15 +1,15 @@
 import React from "react";
 import image1 from "../public/images/image1.jpg";
-import image2 from "../public/images/image2.jpg";
-import image3 from "../public/images/image3.jpg";
-import image4 from "../public/images/image4.jpg";
+// import image2 from "../public/images/image2.jpg";
+// import image3 from "../public/images/image3.jpg";
+// import image4 from "../public/images/image4.jpg";
 import "../styles/about.css";
 
 const About = () => {
   return (
     <>
       <main>
-        <div className="container-fluid  ">
+        <div className="container-fluid mt-4">
           <div className="row text-right">
             <div className="col-md-6 col-lg-6 d-flex align-items-center">
               <img
@@ -18,7 +18,7 @@ const About = () => {
                 alt="image desc"
               />
             </div>
-            <div className="col-md-6 col-lg-6 mt-5 pt-5">
+            <div className="col-md-6 col-lg-6  mt-5 pt-5">
               <h2 className="">
                 Photos for <span className="our">For Everyone</span>
               </h2>
@@ -34,22 +34,22 @@ const About = () => {
           </div>
         </div>
       </main>
-      <div class="text-center">
+      <div class="text-center mt-2">
         <h2>
           <span className="team">OUR TEAM</span>
         </h2>
       </div>
       <section>
-        <div class="container-fluid px-0 bg-dark mt-4">
-          <div class="row">
-            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
-              <div className="card">
+        <div class="container-fluid mt-4">
+          <div class="row justify-content-center  no-gutters">
+            <div class="col-md-4 col-sm-4 col-lg-4 text-center ">
+              <div className="card  p-3 mb-5 bg-white  ">
                 <img
                   className="card-img-top"
                   src={image1}
                   alt="Card image cap"
                 />
-                <div className="card-body">
+                <div className="card-body ">
                   <h5 className="card-title">Card title</h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
@@ -61,7 +61,7 @@ const About = () => {
                     aria-label="Basic mixed styles example"
                   >
                     <a href="#" className="btn btn-info  mt-2">
-                      <i className="fa fa-linkedin"></i> 
+                      <i className="fa fa-linkedin"></i>
                     </a>
                     <a href="#" className="btn btn-info mx-2 mt-2">
                       <i className="fa fa-facebook"></i>
@@ -73,8 +73,8 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
-              <div className="card">
+            <div class="col-md-4 col-sm-4 col-lg-4 text-center ">
+              <div className="card  p-3 mb-5 bg-white ">
                 <img
                   className="card-img-top"
                   src={image1}
@@ -92,7 +92,7 @@ const About = () => {
                     aria-label="Basic mixed styles example"
                   >
                     <a href="#" className="btn btn-info  mt-2">
-                      <i className="fa fa-linkedin"></i> 
+                      <i className="fa fa-linkedin "></i>
                     </a>
                     <a href="#" className="btn btn-info mx-2 mt-2">
                       <i className="fa fa-facebook"></i>
@@ -104,8 +104,8 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-sm-4 col-lg-4 text-center">
-              <div className="card">
+            <div class="col-md-4 col-sm-4 col-lg-4 text-center ">
+              <div className="card  p-3 mb-5 bg-white ">
                 <img
                   className="card-img-top"
                   src={image1}
@@ -123,7 +123,7 @@ const About = () => {
                     aria-label="Basic mixed styles example"
                   >
                     <a href="#" className="btn btn-info  mt-2">
-                      <i className="fa fa-linkedin "></i> 
+                      <i className="fa fa-linkedin "></i>
                     </a>
                     <a href="#" className="btn btn-info mx-2 mt-2">
                       <i className="fa fa-facebook"></i>
