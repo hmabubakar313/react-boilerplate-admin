@@ -30,12 +30,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-      <div className="container-fluid mt-3 d-flex justify-content-center  ms-10 m-0"
+      {/* <section> */}
+      <div class="container-fluid overflow-hidden mt-2"
       >
-          <div className="row ">
-            <div className="col-sm-4 col-md-4 col-lg-4 mt-2 ps-5">
-              <div className="card text-center border shadow w-75 bg-light">
+          <div class="row mx-auto w-75 ">
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
+              <div className="card text-center border shadow bg-light border-3 ">
                 <div className="card-icon mt-3">
                   <i className="fa fa-lightbulb-o fa-3x"></i>
                 </div>
@@ -51,8 +51,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-4 col-md-4 col-lg-4 mt-2 ps-5">
-              <div className="card text-center border shadow w-75 bg-light">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div className="card text-center border shadow bg-light border-3 ">
                 <div className="card-icon mt-3">
                   <i className="fa fa-lightbulb-o fa-3x"></i>
                 </div>
@@ -68,8 +68,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-4 col-md-4 col-lg-4 mt-2 ps-5">
-              <div className="card text-center border shadow w-75 bg-light">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div className="card text-center border shadow bg-light border-3 ">
                 <div className="card-icon mt-3">
                   <i className="fa fa-lightbulb-o fa-3x"></i>
                 </div>
@@ -87,7 +87,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      {/* </section> */}
 
       <section>
         <div class="container-fluid mt-5 bg-light">
