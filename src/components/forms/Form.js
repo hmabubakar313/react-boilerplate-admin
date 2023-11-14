@@ -1,113 +1,231 @@
 import React, { useState } from "react";
 import "../styles/form.css";
 
-const SimpleForm = () => {
+const Form = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    message: "",
-    subject: "",
-    age: "",
+    addressLine1: "",
+    addressLine2: "",
+    city: "",
+    company: "",
+    occupation: "",
     gender: "",
     phoneNumber: "",
-    address: "",
-    website: "",
-    dateOfBirth: "",
-    occupation: "",
-    company: "",
-    
+    age: "",
+    zipCode: "",
   });
 
+  const [formErrors, setFormErrors] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    addressLine1: false,
+    addressLine2: false,
+    city: false,
+    company: false,
+    occupation: false,
+    gender: false,
+    phoneNumber: false,
+    age: false,
+    zipCode: false,
+  });
+
+  const validateForm = () => {
+    let valid = true;
+    const errors = {};
+  
+    const validateInput = (fieldName, regex) => {
+      if (!formData[fieldName].match(regex)) {
+        errors[fieldName] = true;
+        valid = false;
+      } else {
+        errors[fieldName] = false;
+      }
+    };
+  
+    validateInput("firstName", /^[a-zA-Z]*$/);
+    validateInput("lastName", /^[a-zA-Z]*$/);
+    validateInput("email", /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+    validateInput("company", /^[a-zA-Z]*$/);
+    validateInput("occupation", /^[a-zA-Z]*$/);
+    validateInput("phoneNumber", /^[0-9]*$/);
+    validateInput("addressLine1", /^[a-zA-Z0-9\s,'-]*$/);
+    validateInput("addressLine2", /^[a-zA-Z0-9\s,'-]*$/);
+    validateInput("city", /^[a-zA-Z\s]*$/);
+    validateInput("zipCode", /^[0-9]*$/);
+  
+    
+    const ageValue = parseInt(formData.age, 10);
+    if (isNaN(ageValue) || ageValue <= 18) {
+      errors.age = true;
+      valid = false;
+    } else {
+      errors.age = false;
+    }
+  
+    setFormErrors({ ...formErrors, ...errors });
+    return valid;
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log("Form submitted:", formData);
+    const isValid = validateForm();
+
+    if (isValid) {
+      console.log("Form submitted:", formData);
+      
+    } else {
+      console.log("Form has validation errors");
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    setFormErrors({ ...formErrors, [name]: false });
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
+    <div className="container-fluid mt-5">
+      <div className="row justify-content-center w-75 mx-auto">
         <div className="col-lg-6">
-          <div className="card p-5 contact-card">
+          <div className="card p-5 contact-card shadow">
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="name" className="form-label">
-                  Your Name
+                <label htmlFor="firstName" className="form-label">
+                  First Name
                 </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className={`form-control ${formErrors.firstName ? "invalid" : ""}`}
+                  id="firstName"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  style={formErrors.firstName ? { borderColor: 'red' } : {}}
                   required
                 />
               </div>
               <div className="mb-3">
+                <label htmlFor="lastName" className="form-label">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  className={`form-control ${formErrors.lastName ? "invalid" : ""}`}
+                  id="lastName"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  style={formErrors.lastName ? { borderColor: 'red' } : {}}
+                  required
+                />
+              </div>
+              {/* Email */}
+              <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  Your Email
+                  Email
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className={`form-control ${formErrors.email ? "invalid" : ""}`}
                   id="email"
                   name="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={handleInputChange}
+                  style={formErrors.email ? { borderColor: 'red' } : {}}
                   required
                 />
               </div>
+              {/* Address Line 1 */}
               <div className="mb-3">
-                <label htmlFor="message" className="form-label">
-                  Your Message
-                </label>
-                <textarea
-                  className="form-control"
-                  id="message"
-                  name="message"
-                  rows="4"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                ></textarea>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="subject" className="form-label">
-                  Subject
+                <label htmlFor="addressLine1" className="form-label">
+                  Address Line 1
                 </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className={`form-control ${formErrors.addressLine1 ? "invalid" : ""}`}
+                  id="addressLine1"
+                  name="addressLine1"
+                  value={formData.addressLine1}
+                  onChange={handleInputChange}
+                  style={formErrors.addressLine1 ? { borderColor: 'red' } : {}}
                 />
               </div>
+              {/* Address Line 2 */}
               <div className="mb-3">
-                <label htmlFor="age" className="form-label">
-                  Your Age
+                <label htmlFor="addressLine2" className="form-label">
+                  Address Line 2
                 </label>
                 <input
-                  type="number"
-                  className="form-control"
-                  id="age"
-                  name="age"
-                  value={formData.age}
-                  onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+                  type="text"
+                  className={`form-control ${formErrors.addressLine2 ? "invalid" : ""}`}
+                  id="addressLine2"
+                  name="addressLine2"
+                  value={formData.addressLine2}
+                  onChange={handleInputChange}
+                  style={formErrors.addressLine2 ? { borderColor: 'red' } : {}}
                 />
               </div>
+              {/* City */}
+              <div className="mb-3">
+                <label htmlFor="city" className="form-label">
+                  City
+                </label>
+                <input
+                  type="text"
+                  className={`form-control ${formErrors.city ? "invalid" : ""}`}
+                  id="city"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleInputChange}
+                  style={formErrors.city ? { borderColor: 'red' } : {}}
+                />
+              </div>
+              {/* Company */}
+              <div className="mb-3">
+                <label htmlFor="company" className="form-label">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  className={`form-control ${formErrors.company ? "invalid" : ""}`}
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  style={formErrors.company ? { borderColor: 'red' } : {}}
+                />
+              </div>
+              {/* Occupation */}
+              <div className="mb-3">
+                <label htmlFor="occupation" className="form-label">
+                  Occupation
+                </label>
+                <input
+                  type="text"
+                  className={`form-control ${formErrors.occupation ? "invalid" : ""}`}
+                  id="occupation"
+                  name="occupation"
+                  value={formData.occupation}
+                  onChange={handleInputChange}
+                  style={formErrors.occupation ? { borderColor: 'red' } : {}}
+                />
+              </div>
+              {/* Gender */}
               <div className="mb-3">
                 <label htmlFor="gender" className="form-label">
-                  Your Gender
+                  Gender
                 </label>
                 <select
-                  className="form-control"
+                  className={`form-control ${formErrors.gender ? "invalid" : ""}`}
                   id="gender"
                   name="gender"
                   value={formData.gender}
-                  onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
+                  onChange={handleInputChange}
+                  style={formErrors.gender ? { borderColor: 'red' } : {}}
                 >
                   <option value="">Select</option>
                   <option value="male">Male</option>
@@ -115,85 +233,51 @@ const SimpleForm = () => {
                   <option value="other">Other</option>
                 </select>
               </div>
+              {/* Phone Number */}
               <div className="mb-3">
                 <label htmlFor="phoneNumber" className="form-label">
                   Phone Number
                 </label>
                 <input
                   type="tel"
-                  className="form-control"
+                  className={`form-control ${formErrors.phoneNumber ? "invalid" : ""}`}
                   id="phoneNumber"
                   name="phoneNumber"
                   value={formData.phoneNumber}
-                  onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                  onChange={handleInputChange}
+                  style={formErrors.phoneNumber ? { borderColor: 'red' } : {}}
                 />
               </div>
+              {/* Age */}
               <div className="mb-3">
-                <label htmlFor="address" className="form-label">
-                  Your Address
-                </label>
-                <textarea
-                  className="form-control"
-                  id="address"
-                  name="address"
-                  rows="3"
-                  value={formData.address}
-                  onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                ></textarea>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="website" className="form-label">
-                  Your Website
+                <label htmlFor="age" className="form-label">
+                  Age
                 </label>
                 <input
-                  type="url"
-                  className="form-control"
-                  id="website"
-                  name="website"
-                  value={formData.website}
-                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  type="number"
+                  className={`form-control ${formErrors.age ? "invalid" : ""}`}
+                  id="age"
+                  name="age"
+                  value={formData.age}
+                  onChange={handleInputChange}
+                  style={formErrors.age ? { borderColor: 'red' } : {}}
                 />
               </div>
+              {/* Zip Code */}
               <div className="mb-3">
-                <label htmlFor="dateOfBirth" className="form-label">
-                  Date of Birth
-                </label>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="dateOfBirth"
-                  name="dateOfBirth"
-                  value={formData.dateOfBirth}
-                  onChange={(e) => setFormData({ ...formData, dateOfBirth: e.target.value })}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="occupation" className="form-label">
-                  Your Occupation
+                <label htmlFor="zipCode" className="form-label">
+                  Zip Code
                 </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="occupation"
-                  name="occupation"
-                  value={formData.occupation}
-                  onChange={(e) => setFormData({ ...formData, occupation: e.target.value })}
+                  className={`form-control ${formErrors.zipCode ? "invalid" : ""}`}
+                  id="zipCode"
+                  name="zipCode"
+                  value={formData.zipCode}
+                  onChange={handleInputChange}
+                  style={formErrors.zipCode ? { borderColor: 'red' } : {}}
                 />
               </div>
-              <div className="mb-3">
-                <label htmlFor="company" className="form-label">
-                  Your Company
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                />
-              </div>
-             
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>
@@ -205,4 +289,4 @@ const SimpleForm = () => {
   );
 };
 
-export default SimpleForm;
+export default Form;
