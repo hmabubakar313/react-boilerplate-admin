@@ -3,6 +3,8 @@ import "../styles/form.css";
 
 const Form = () => {
   const [formData, setFormData] = useState({
+    userName: "",
+    passWord: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -18,6 +20,8 @@ const Form = () => {
   });
 
   const [formErrors, setFormErrors] = useState({
+    userName: false,
+    passWord: false,
     firstName: false,
     lastName: false,
     email: false,
@@ -44,7 +48,8 @@ const Form = () => {
         errors[fieldName] = false;
       }
     };
-  
+    validateInput("userName", /^[a-zA-Z0-9]*$/);
+    validateInput("passWord", /^[a-zA-Z0-9]*$/);
     validateInput("firstName", /^[a-zA-Z]*$/);
     validateInput("lastName", /^[a-zA-Z]*$/);
     validateInput("email", /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
@@ -87,12 +92,65 @@ const Form = () => {
     setFormErrors({ ...formErrors, [name]: false });
   };
 
+  const errorMessages = {
+    userName: 'Please enter a valid username (only letters and numbers allowed).',
+    passWord: 'Please enter a valid password (only letters and numbers allowed).',
+    firstName: 'Please enter a valid first name (only letters allowed).',
+    lastName: 'Please enter a valid last name (only letters allowed).',
+    email: 'Please enter a valid email address.',
+    addressLine1: 'Please enter a valid address.',
+    addressLine2: 'Please enter a valid address.',
+    city: 'Please enter a valid city name. you can only use letters.',
+    company: 'Please enter a valid company name. you can only use letters.',
+    occupation: 'Please enter a valid occupation. you can only use letters.',
+    phoneNumber: 'Please enter a valid phone number. you can only use numbers.',
+    age: 'Please enter a valid age. you must be over 18.',
+    zipCode: 'Please enter a valid zip code. you can only use numbers.',
+  };
+
   return (
     <div className="container-fluid mt-5">
       <div className="row justify-content-center w-75 mx-auto">
         <div className="col-lg-6">
           <div className="card p-5 contact-card shadow">
             <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+                <label htmlFor="userName" className="form-label">
+                  User Name
+                </label>
+                <input
+                  type="text"
+                  className={`form-control ${formErrors.userName ? "invalid" : ""}`}
+                  id="userName"
+                  name="userName"
+                  value={formData.userName}
+                  onChange={handleInputChange}
+                  style={formErrors.userName ? { borderColor: 'red' } : {}}
+                  required
+                />
+                {formErrors.userName && (
+                <small className="text-danger">{errorMessages.userName}</small>  
+                )}
+              </div>
+              
+              <div className="mb-3">
+                <label htmlFor="passWord" className="form-label">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  className={`form-control ${formErrors.passWord ? "invalid" : ""}`}
+                  id="passWord"
+                  name="passWord"
+                  value={formData.passWord}
+                  onChange={handleInputChange}
+                  style={formErrors.passWord ? { borderColor: 'red' } : {}}
+                  required
+                />
+                {formErrors.passWord && (
+                <small className="text-danger">{errorMessages.passWord}</small>
+                )}  
+              </div>
               <div className="mb-3">
                 <label htmlFor="firstName" className="form-label">
                   First Name
@@ -107,7 +165,15 @@ const Form = () => {
                   style={formErrors.firstName ? { borderColor: 'red' } : {}}
                   required
                 />
+               
+                {formErrors.firstName && (
+                  <small className="text-danger">{errorMessages.firstName}</small>
+                )}
               </div>
+              
+
+
+          
               <div className="mb-3">
                 <label htmlFor="lastName" className="form-label">
                   Last Name
@@ -122,8 +188,12 @@ const Form = () => {
                   style={formErrors.lastName ? { borderColor: 'red' } : {}}
                   required
                 />
+               
+                {formErrors.lastName && (
+                  <small className="text-danger">{errorMessages.lastName}</small>
+                )}
               </div>
-              {/* Email */}
+         
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Email
@@ -138,8 +208,12 @@ const Form = () => {
                   style={formErrors.email ? { borderColor: 'red' } : {}}
                   required
                 />
+               
+                {formErrors.email && (
+                  <small className="text-danger">{errorMessages.email}</small>
+                )}
               </div>
-              {/* Address Line 1 */}
+           
               <div className="mb-3">
                 <label htmlFor="addressLine1" className="form-label">
                   Address Line 1
@@ -153,8 +227,12 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.addressLine1 ? { borderColor: 'red' } : {}}
                 />
+               
+                {formErrors.addressLine1 && (
+                  <small className="text-danger">{errorMessages.addressLine1}</small>
+                )}
               </div>
-              {/* Address Line 2 */}
+             
               <div className="mb-3">
                 <label htmlFor="addressLine2" className="form-label">
                   Address Line 2
@@ -168,8 +246,12 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.addressLine2 ? { borderColor: 'red' } : {}}
                 />
+            
+                {formErrors.addressLine2 && (
+                  <small className="text-danger">{errorMessages.addressLine2}</small>
+                )}
               </div>
-              {/* City */}
+          
               <div className="mb-3">
                 <label htmlFor="city" className="form-label">
                   City
@@ -183,8 +265,12 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.city ? { borderColor: 'red' } : {}}
                 />
+               
+                {formErrors.city && (
+                  <small className="text-danger">{errorMessages.city}</small>
+                )}
               </div>
-              {/* Company */}
+            
               <div className="mb-3">
                 <label htmlFor="company" className="form-label">
                   Company
@@ -198,8 +284,12 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.company ? { borderColor: 'red' } : {}}
                 />
+               
+                {formErrors.company && (
+                  <small className="text-danger">{errorMessages.company}</small>
+                )}
               </div>
-              {/* Occupation */}
+           
               <div className="mb-3">
                 <label htmlFor="occupation" className="form-label">
                   Occupation
@@ -213,8 +303,12 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.occupation ? { borderColor: 'red' } : {}}
                 />
+                
+                {formErrors.occupation && (
+                  <small className="text-danger">{errorMessages.occupation}</small>
+                )}
               </div>
-              {/* Gender */}
+              
               <div className="mb-3">
                 <label htmlFor="gender" className="form-label">
                   Gender
@@ -247,8 +341,12 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.phoneNumber ? { borderColor: 'red' } : {}}
                 />
+               
+                {formErrors.phoneNumber && (
+                  <small className="text-danger">{errorMessages.phoneNumber}</small>
+                )}
               </div>
-              {/* Age */}
+           
               <div className="mb-3">
                 <label htmlFor="age" className="form-label">
                   Age
@@ -262,8 +360,12 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.age ? { borderColor: 'red' } : {}}
                 />
+             
+                {formErrors.age && (
+                  <small className="text-danger">{errorMessages.age}</small>
+                )}
               </div>
-              {/* Zip Code */}
+            
               <div className="mb-3">
                 <label htmlFor="zipCode" className="form-label">
                   Zip Code
@@ -277,6 +379,10 @@ const Form = () => {
                   onChange={handleInputChange}
                   style={formErrors.zipCode ? { borderColor: 'red' } : {}}
                 />
+              
+                {formErrors.zipCode && (
+                  <small className="text-danger">{errorMessages.zipCode}</small>
+                )}
               </div>
               <button type="submit" className="btn btn-primary">
                 Submit
