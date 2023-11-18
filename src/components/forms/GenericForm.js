@@ -138,7 +138,9 @@ const GenericForm = ({ initialFormData, fields, onSubmit }) => {
           {errors[field.name] && <small className="text-danger">{errors[field.name]}</small>}
         </div>
       ))}
+      <div className='text-center'>
       <button type="submit" className="btn btn-primary">Submit</button>
+      </div>
     </form>
   );
 };

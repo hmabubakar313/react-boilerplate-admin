@@ -8,6 +8,7 @@ import ContactUs from "./components/forms/ContactUs";
 import LoginPage from "./components/forms/LoginForm";
 import SignupPage from "./components/forms/SignUp";
 import Table from "./components/table/Table";
+import "./App.css";
 
 
 
@@ -16,7 +17,7 @@ const App = () => {
     <Router>
       <div>
         <Navbar />
-        <div className="container-fluid  m-0 p-0">
+        <div className="container-fluid  m-0 p-0 app">
           <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/contact_us" element={<ContactUs />} />
