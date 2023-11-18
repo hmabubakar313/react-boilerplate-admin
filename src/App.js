@@ -7,6 +7,7 @@ import Home from "./components/navbar/Home";
 import ContactUs from "./components/forms/ContactUs";
 import LoginPage from "./components/forms/LoginForm";
 import SignupPage from "./components/forms/SignUp";
+import Table from "./components/table/Table";
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/table" element={<Table />} />
           </Routes>
         </div>
         <Footer />

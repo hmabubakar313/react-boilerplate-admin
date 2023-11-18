@@ -35,5 +35,8 @@
 .card:hover {
   background-color: #e2e6ea; 
 }
-
-
+/* in your home.css or a relevant stylesheet */
+.carousel-control-prev-icon-dark, .carousel-control-next-icon-dark {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  padding-top: 5%;
+}
