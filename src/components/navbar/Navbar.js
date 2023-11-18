@@ -1,9 +1,6 @@
-import React  from 'react';
-
+import React from "react";
 
 const Navbar = () => {
-  
-
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-2">
@@ -22,7 +19,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse " id="navbarNav">
-          <ul className="navbar-nav ml-auto ">
+          <ul className="navbar-nav ms-auto ">
             <li className="nav-item">
               <a className="nav-link" href="/about">
                 About
@@ -34,7 +31,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/login" >
+              <a className="nav-link" href="/login">
                 <i className="bi bi-person"></i> Login
               </a>
             </li>
@@ -43,10 +40,14 @@ const Navbar = () => {
                 <i className="bi bi-person-plus"></i> Signup
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/table">
+                <i className=""></i> Table
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
-     
     </>
   );
 };

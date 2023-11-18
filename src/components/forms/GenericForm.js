@@ -33,28 +33,28 @@ const GenericForm = ({ initialFormData, fields, onSubmit }) => {
     }
   };
 
-  const validationRules = {
-    email: {
-      required: true,
-      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      message: 'Invalid email format',
-    },
-    name: {
-      required: true,
-      pattern: /^[A-Za-z\s]+$/, // Only letters and spaces allowed
-      message: 'Name is required and should not contain numbers',
-    },
-    password: {
-      required: true,
-      minLength: 8,
-      message: 'Password is required and should be at least 8 characters long',
-    },
-    username: {
-      required: true,
-      pattern: /^[A-Za-z]+$/, // Only letters allowed
-      message: 'Username is required and should not contain numbers',
-    },
-  };
+  // const validationRules = {
+  //   email: {
+  //     required: true,
+  //     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+  //     message: 'Invalid email format',
+  //   },
+  //   name: {
+  //     required: true,
+  //     pattern: /^[A-Za-z\s]+$/, // Only letters and spaces allowed
+  //     message: 'Name is required and should not contain numbers',
+  //   },
+  //   password: {
+  //     required: true,
+  //     minLength: 8,
+  //     message: 'Password is required and should be at least 8 characters long',
+  //   },
+  //   username: {
+  //     required: true,
+  //     pattern: /^[A-Za-z]+$/, // Only letters allowed
+  //     message: 'Username is required and should not contain numbers',
+  //   },
+  // };
   
   const validateField = (fieldName, value) => {
     const fieldErrors = {};
