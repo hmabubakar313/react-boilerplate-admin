@@ -22,7 +22,7 @@ const SignupPage = () => {
 
   return (
     <div className="container-fluid my-4 w-50 mx-auto">
-      <div className="card shadow">
+      <div className="card">
         <div className="card-body">
           <h3 className="card-title text-center">Sign Up</h3>
           <GenericForm

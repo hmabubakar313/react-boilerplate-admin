@@ -26,13 +26,13 @@
   font-weight: 400;
   padding: 20px;
 }
-.card {
+.crousel-card {
   cursor: pointer;
   background-color: #f8f9fa; 
   transition: background-color 0.3s ease;
 }
 
-.card:hover {
+.crousel-card:hover {
   background-color: #e2e6ea; 
 }
 /* in your home.css or a relevant stylesheet */

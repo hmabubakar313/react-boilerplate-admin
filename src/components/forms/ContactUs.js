@@ -22,7 +22,7 @@ const ContactUs = () => {
 
   return (
     <div className="container-fluid my-4 w-50 mx-auto">
-      <div className="card shadow">
+      <div className="card">
         <div className="card-body">
           <h3 className="card-title text-center">Contact Us</h3>
           <GenericForm
