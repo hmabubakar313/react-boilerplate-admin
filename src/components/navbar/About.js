@@ -43,7 +43,7 @@ const About = () => {
         <div class="container-fluid mt-4">
           <div class="row mx-auto w-75">
             <div class="col-md-4 col-sm-4 col-lg-4 text-center ">
-              <div className="card  p-3 mb-5 bg-white  border-3 shadow ">
+              <div className="card   mb-5 bg-white   shadow ">
                 <img
                   className="card-img-top"
                   src={image1}
@@ -74,7 +74,7 @@ const About = () => {
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-lg-4 text-center ">
-              <div className="card  p-3 mb-5 bg-white border-3 shadow ">
+              <div className="card   mb-5 bg-white  shadow ">
                 <img
                   className="card-img-top"
                   src={image1}
@@ -105,7 +105,7 @@ const About = () => {
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-lg-4 text-center ">
-              <div className="card  p-3 mb-5 bg-white border-3 shadow ">
+              <div className="card mb-5 bg-white  shadow ">
                 <img
                   className="card-img-top"
                   src={image1}

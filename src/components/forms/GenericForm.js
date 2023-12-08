@@ -66,12 +66,22 @@ const GenericForm = ({ initialFormData, fields, onSubmit }) => {
       } else if (!emailPattern.test(value)) {
         fieldErrors[fieldName] = 'Invalid email format';
       }
+      if (value.length > 255)
+      {
+        fieldErrors[fieldName] = "value can not greater than 250 characters"
+        console.log(value.length)
+      }
     } else if (fieldName === 'name') {
       if (!value) {
         fieldErrors[fieldName] = 'Name is required';
       } else if (/\d/.test(value)) {
         fieldErrors[fieldName] = 'Name should not contain numbers';
       }
+      if (value.length <3 || value > 250 )
+      { 
+        fieldErrors[fieldName] = "Name can not less than 3 or Can not greater than 250"
+      }
+      
     } else if (fieldName === 'password') {
       // Add password validation logic here
       if (!value) {
@@ -84,6 +94,11 @@ const GenericForm = ({ initialFormData, fields, onSubmit }) => {
         fieldErrors[fieldName] = 'Username is required';
       } else if (/\d/.test(value)) {
         fieldErrors[fieldName] = 'Username should not contain numbers';
+      }
+      if (value.length <3 || value > 16 )
+      {
+        console.log(value.length,"username")
+        fieldErrors[fieldName] = "Name can not less than 3 or Can not greater than 16 "
       }
     }
   
@@ -139,7 +154,7 @@ const GenericForm = ({ initialFormData, fields, onSubmit }) => {
         </div>
       ))}
       <div className='text-center'>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary mt-3">Submit</button>
       </div>
     </form>
   );

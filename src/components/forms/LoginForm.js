@@ -20,8 +20,8 @@ const LoginPage = () => {
 
   return (
     <div className="container-fluid my-4 w-50 mx-auto">
-      <div className="card shadow">
-        <div className="card-body">
+      <div className="card ">
+        <div className="card-body p-5">
           <h3 className="card-title text-center">Login</h3>
           <GenericForm
             initialFormData={initialFormData}

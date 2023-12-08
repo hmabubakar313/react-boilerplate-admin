@@ -18,7 +18,7 @@ const App = () => {
     <Router>
       <div>
         <Navbar />
-        <div className="container-fluid  m-0 p-0 app">
+        <div className="container-fluid  m-0 p-0 app bg-light bg-gradient">
           <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/contact_us" element={<ContactUs />} />
