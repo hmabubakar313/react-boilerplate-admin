@@ -140,8 +140,8 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="mt-5 bg-light p-2">
-        <div className="container-fluid text-center">
+      <section className="">
+        <div className="container-fluid text-center bg-gradient bg-light mt-5 p-2  mb-3">
           <h2>Join Our Community</h2>
           <p>
             Be a part of our growing community and stay updated with the latest

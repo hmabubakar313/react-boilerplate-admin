@@ -1,40 +1,72 @@
-// SignupPage.js
-import React from 'react';
-import GenericForm from './GenericForm';
+import React from "react";
 
-const SignupPage = () => {
-  const fields = [
-    { name: 'username', label: 'Username', type: 'text' },
-    { name: 'email', label: 'Email', type: 'email' },
-    { name: 'password', label: 'Password', type: 'password' }
-  ];
-
-  const initialFormData = {
-    username: '',
-    email: '',
-    password: ''
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import FormikController from "./FormikController";
+export default function SignUp() {
+  const initialValues = {
+    first_name: "",
+    last_name: "",
+    email: "",
+    username: "",
+    password: "",
+    confirm_Password: "",
   };
-
-  const handleSubmit = (formData) => {
-    console.log('Signup Data:', formData);
-    // Handle signup logic here
-  };
-
+  const validationSchema = Yup.object({
+    email: Yup.string().required("Required"),
+    first_name: Yup.string().required("Required"),
+    last_name_name: Yup.string().required("Required"),
+    username: Yup.string().required("Required"),
+    password: Yup.string()
+      .required("No password provided.")
+      .min(8, "Password is too short - should be 8 chars minimum.")
+      .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
+    new_password: Yup.string()
+      .required("No password provided.")
+      .min(8, "Password is too short - should be 8 chars minimum.")
+      .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
+  });
+  const onSubmit = (values) => console.log("Form data", values);
   return (
-    <div className="container-fluid my-4 w-50 mx-auto">
-      <div className="card">
-        <div className="card-body p-5">
-          <h3 className="card-title text-center">Sign Up</h3>
-          <GenericForm
-            initialFormData={initialFormData}
-            fields={fields}
-            onSubmit={handleSubmit}
-            autoComplete="new-password" // Add autoComplete here
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+      {(formik) => (
+        <Form>
+          <FormikController
+            id="floatingInput"
+            control="input"
+            type="email"
+            label="Email Address"
+            placeholer="Enter email"
+            name="Enter Email"
           />
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default SignupPage;
+          <FormikController
+            id="floatingInput"
+            control="input"
+            type="text"
+            label="Name"
+            placeholer="Enter name"
+            name="Enter Name"
+          />
+
+          <FormikController
+            id="floatingInput"
+            control="input"
+            type="password"
+            label="Password"
+            placeholder="Enter Password"
+            name="Enter Password"
+          />
+
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </Form>
+      )}
+    </Formik>
+  );
+}

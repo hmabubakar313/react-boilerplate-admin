@@ -26,16 +26,16 @@ const Navbar = () => {
                 About
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/contact_us">
                 Contact Us
               </Link>
-            </li>
-            <li className="nav-item">
+            </li> */}
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/login">
                 <i className="bi bi-person"></i> Login
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" to="/signup">
                 <i className="bi bi-person-plus"></i> Signup
