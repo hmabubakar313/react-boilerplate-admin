@@ -6,8 +6,8 @@ import RadioButtons from "./RadioButton.js";
 import CheckBoxes from "./CheckBoxes.js";
 
 function FormikController(props) {
-  const { type, ...rest } = props;
-  switch (type) {
+  const {  ...rest } = props;
+  switch (rest.type) {
     case "password":
     case "text":
     case "email":

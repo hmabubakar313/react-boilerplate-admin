@@ -43,7 +43,7 @@ function FormikWrapper() {
         <Form>
           <FormikController
             id="floatingInput"
-            control="input"
+            control="text"
             type="email"
             label="Email"
             placeholer="enter email"
@@ -51,7 +51,7 @@ function FormikWrapper() {
           />
             <FormikController
             id="floatingInput"
-            control="input"
+            control="text"
             type="text"
             label="name"
             placeholer="enter name"
@@ -59,17 +59,20 @@ function FormikWrapper() {
           />
           <FormikController
             control="textarea"
+            type="textArea"
             label="Description"
             name="description"
           />
           <FormikController
             control="select"
+            type="select"
             label="Select your choice"
             name="selectChoice"
             options={choices}
           />
           <FormikController
             control="radio"
+            type="radio"
             label="Click your choice"
             name="radioChoice"
             options={radioOptions}
@@ -78,6 +81,7 @@ function FormikWrapper() {
             control="checkbox"
             label="select your choices"
             name="checkBoxChoice"
+            type="checkbox"
             options={CheckBoxOptions}
           />
           <button type="submit" className="btn btn-primary">

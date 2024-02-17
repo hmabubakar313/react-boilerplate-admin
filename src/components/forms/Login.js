@@ -41,7 +41,7 @@ const SignUp = () => {
         onSubmit={onSubmit}
       >
         <Form>
-          <h3 className="mb-3">Signup Form</h3>
+          <h3 className="mb-3">Login Form</h3>
 
           <FormikController
             type="email"
@@ -51,13 +51,7 @@ const SignUp = () => {
             wrapperClassName="mb-3"
           />
 
-          <FormikController
-            type="text"
-            label="Enter Name"
-            placeholder="Enter Name"
-            name="name"
-            wrapperClassName="mb-3"
-          />
+      
 
           <FormikController
             type="text"
