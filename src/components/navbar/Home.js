@@ -71,7 +71,7 @@ export default function Home() {
 
   return (
     <>
-     <section className="hero">
+      <section className="hero">
         <div className="container-fluid text-center">
           <h1>
             <span className="pb-3">Hello</span> Landing Page
@@ -98,8 +98,6 @@ export default function Home() {
         </div>
       </section>
 
- 
-
       <div className="container-fluid overflow-hidden mt-2">
         <div className="row w-75 mx-auto mt-5">
           <div
@@ -122,29 +120,28 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+              <button
+                className="carousel-control-prev"
+                type="button"
+                onClick={prevGroup}
+              >
+                <span className="carousel-control-prev-icon carousel-control-prev-icon-dark"></span>
+                <span>Previous</span>
+              </button>
+              <button
+                className="carousel-control-next btn"
+                type="button"
+                onClick={nextGroup}
+              >
+                <span className="carousel-control-next-icon carousel-control-next-icon-dark"></span>
+              </button>
             </div>
           </div>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          onClick={prevGroup}
-        >
-          <span className="carousel-control-prev-icon carousel-control-prev-icon-dark"></span>
-          <span>Previous</span>
-        </button>
-        <button
-          className="carousel-control-next btn"
-          type="button"
-          onClick={nextGroup}
-        >
-          <span className="carousel-control-next-icon carousel-control-next-icon-dark"></span>
-          <span></span>
-        </button>
       </div>
 
-      <section className="mt-5 bg-light p-2">
-        <div className="container-fluid text-center">
+      <section className="">
+        <div className="container-fluid text-center bg-gradient bg-light mt-5 p-2  mb-3">
           <h2>Join Our Community</h2>
           <p>
             Be a part of our growing community and stay updated with the latest

@@ -2,8 +2,7 @@
   position: relative;
   height: 100%;
   padding-bottom: 80px;
-  background: #4f2f60 url("https://miguelquispe.com/pen//hero.jpg") center top
-    no-repeat;
+  background:#6c757d;
   background-size: cover;
   color: #fff;
   overflow: hidden;
@@ -26,13 +25,13 @@
   font-weight: 400;
   padding: 20px;
 }
-.card {
+.crousel-card {
   cursor: pointer;
   background-color: #f8f9fa; 
   transition: background-color 0.3s ease;
 }
 
-.card:hover {
+.crousel-card:hover {
   background-color: #e2e6ea; 
 }
 /* in your home.css or a relevant stylesheet */
